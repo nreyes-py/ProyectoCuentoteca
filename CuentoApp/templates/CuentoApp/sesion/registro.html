@@ -1,0 +1,17 @@
+{% extends "CuentoApp/index.html" %}
+{% block title %} Registro{% endblock %}
+{% block content %}
+<h1>Registrate para acceder</h1>
+{% if error %}
+<h2 class="login-error">
+  {{ error }}
+</h2>
+{% endif %}
+<section class="form-container">
+  <form action="" method="POST" class="register-form">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Ingresar</button>
+  </form>
+</section>
+{% endblock %}
