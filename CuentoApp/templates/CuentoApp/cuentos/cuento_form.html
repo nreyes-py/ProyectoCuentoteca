@@ -1,0 +1,13 @@
+<!-- CuentoApp/templates/CuentoApp/cuentos/cuento_form.html -->
+{% extends 'CuentoApp/base.html' %}
+
+{% block title %}{% if object %}Editar Cuento{% else %}Nuevo Cuento{% endif %}{% endblock %}
+
+{% block content %}
+    <h2>{% if object %}Editar Cuento{% else %}Nuevo Cuento{% endif %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock %}

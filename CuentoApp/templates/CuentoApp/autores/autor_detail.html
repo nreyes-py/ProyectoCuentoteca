@@ -1,0 +1,18 @@
+<!-- autor_detail.html -->
+{% extends 'CuentoApp/base.html' %}
+
+{% block title %}Detalle de {{ object.nombre }} {{ object.apellido }}{% endblock %}
+
+{% block content %}
+    <div class="autor-detail">
+        <h2>{{ object.nombre }} {{ object.apellido }}</h2>
+        {% if object.foto %}
+            <img src="{{ object.foto.url }}" alt="Foto de {{ object.nombre }} {{ object.apellido }}" class="autor-foto">
+        {% endif %}
+        <p><strong>Biografía:</strong> {{ object.biografia }}</p>
+        <p><strong>Fecha de Nacimiento:</strong> {{ object.fecha_nacimiento|date:"d/m/Y" }}</p>
+        <!-- Aquí puedes añadir más detalles si lo deseas -->
+        <a href="{% url 'autor-update' autor.pk %}" class="btn btn-primary">Editar</a>
+        <a href="{% url 'autor-delete' autor.id %}" class="btn btn-danger">Eliminar</a>
+    </div>
+{% endblock %}

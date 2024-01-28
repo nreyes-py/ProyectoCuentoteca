@@ -1,0 +1,14 @@
+{% extends 'CuentoApp/base.html' %}
+
+{% block title %}Eliminar Cuento{% endblock %}
+
+{% block content %}
+    <h2>¿Estás seguro de que deseas eliminar "{{ object.titulo }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+        <a href="{% url 'cuento-list' %}">Cancelar</a>
+        <h2>esta accion no se puede deshacer</h2>
+
+    </form>
+{% endblock %}

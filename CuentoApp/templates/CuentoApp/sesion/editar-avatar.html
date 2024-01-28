@@ -1,0 +1,12 @@
+{% extends "CuentoApp/base.html" %}
+{% block title %} Agregar / cambiar avatar {% endblock %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data" class="input-form">
+  <h2>Agregar / cambiar avatar</h2>
+  {% csrf_token %}
+  {{ form }}
+  <div class="inline">
+    <button type="submit">Cambiar</button>
+  </div>
+</form>
+{% endblock %}

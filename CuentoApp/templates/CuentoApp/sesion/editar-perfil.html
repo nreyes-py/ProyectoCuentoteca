@@ -1,0 +1,39 @@
+{% extends "CuentoApp/base.html" %}
+{% block title %}Editar perfil{% endblock %}
+{% block content %}
+{% load static %}
+<form action="" method="POST" class="input-form">
+  <div class="form-header">
+    <h2>USUARIO </h2>
+    <h1>{{ user.username }}       <img src="{{ request.session.avatar }}" class="avatar rounded" alt="Avatar"/></h1> 
+  </div>
+
+  <div class="avatar-section">
+     {% if request.session.avatar %}
+     <img src="{{ request.session.avatar }}" class="avatar rounded" />
+                  <a href="{% url 'agregar_avatar' %}" class="avatar-container">
+                    <span>Modificar Avatar </span>
+              
+                         
+                  {% else %}
+                   
+                  <img src="{% static 'CuentoApp/assets/img/avatar/predefinido.png' %}" class="avatar rounded" />
+                  <a href="{% url 'agregar_avatar' %}" class="avatar-container">
+                  <span><i class="fa-solid fa-user-tie"></i>Crea Tu Avatar</span>
+              
+                  </a>
+     
+                  {% endif %}
+    
+  </div>
+
+  <div class="form-body">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </div>
+  
+  <div class="form-footer">
+       <button type="submit" class="submit-button">Actualizar</button>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends 'CuentoApp/base.html' %}
+
+{% block title %}{{ object.titulo }}{% endblock %}
+{% load static %}
+{% block content %}
+<div class="cuento-detail">
+    <h2 class="cuento-title">{{ object.titulo }}</h2>
+    {% if object.imagen_portada %}
+        <div class="cuento-portada">
+            <img src="{{ object.imagen_portada.url }}" alt="Portada de {{ object.titulo }}">
+        </div>
+    {% endif %}
+    <div class="cuento-metadata">
+        <p class="cuento-fecha-publicacion">Publicado el: {{ object.fecha_publicacion }}</p>
+        
+        <p class="cuento-autores">Autor(es):   </p>
+        {% for autor in object.autores.all %}
+        {{ autor.nombre }} {{ autor.apellido }}{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+          
+      
+    </div>
+    <div class="cuento-sinopsis">
+        <h3>Sinopsis</h3>
+        <p>{{ object.sinopsis }}</p>
+    </div>
+    <div class="cuento-texto-completo">
+        <h3>Texto Completo</h3>
+        <p>{{ object.texto_completo }}</p>
+    </div>
+    <!-- Aquí puedes agregar más secciones, como comentarios o reseñas -->
+</div>
+
+{% endblock %}

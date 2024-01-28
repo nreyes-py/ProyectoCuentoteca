@@ -1,0 +1,108 @@
+.authenticated a{
+  /* color: #4a7c79!important;*/
+}  
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.input-form,
+.search-form {
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.search-form button{
+  margin-top: -6px;
+  margin-left: -6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.search-form input{
+  padding: 6px 5px 5px;
+  border: 0;
+  border-radius: 4px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.footer-main{
+  width: 100%;
+  position: relative;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: black;
+  text-align:center;
+}
+.cuento-img {
+  height: 200px;
+  object-fit: contain;
+  background-color: #f0f0f0; /* Color de fondo en caso de que haya espacio extra */
+  border: 1px solid #ddd; /* Un borde ligero para definir el área de la imagen */
+}
+
+.navbar {
+  background-color: #f8f9fa; /* Cambia el color de fondo según tus preferencias */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil para la barra de navegación */
+}
+
+.navbar-brand {
+  color: #007bff; /* Cambia el color según tus preferencias */
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #fff!important; /* Cambia el color de los enlaces */
+  font-size: 20px!important;
+}
+.authenticated span{
+  color: white;
+}
+.btn-primary{
+  background-color: #4a7c79!important;
+  border: #4a7c79!important;
+}
+.nav-link:hover {
+  color: #4a7c79!important; /* Color al pasar el ratón por encima */
+}
+
+/* Estilos para resaltar el elemento activo en el menú */
+.nav-item.active .nav-link {
+  color: #4a7c79!important; /* Color para el enlace activo */
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-usuario{
+  margin: 10px 0px;
+}
+
+.rounded {
+  border: 0.7px solid #fff;
+}
+/* css nicolas */
+.logo{
+  width: 120px;
+  height: auto;
+}
+.carousel-caption{
+  top:10%;
+  background-color: black;
+  opacity: 0.8;
+}
+.display-5 {
+  font-size: calc(1.525rem + 3.3vw);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.fill-primary {
+  fill: #4a7c79!important;
+}

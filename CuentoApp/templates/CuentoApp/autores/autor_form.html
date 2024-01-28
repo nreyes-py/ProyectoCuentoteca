@@ -1,0 +1,15 @@
+<!-- autor_form.html -->
+{% extends 'CuentoApp/base.html' %}
+
+{% block title %}
+    {% if object %}Editar Autor{% else %}Nuevo Autor{% endif %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% if object %}Editar Autor{% else %}Agregar Nuevo Autor{% endif %}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{% if object %}Actualizar{% else %}Crear{% endif %}</button>
+    </form>
+{% endblock %}
